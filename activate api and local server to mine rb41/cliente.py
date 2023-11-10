@@ -12,25 +12,45 @@ import json
 from cryptography.fernet import Fernet
 import sys
 import tkinter as tk
+import socket
+import socket
+import time
 
-# Lista de URLs do servidor de mineração
-MINING_SERVER_URLS = [
-    'http://seuip:2083/api',
-    # Adicione mais URLs conforme necessário
-]
+# Obtém o endereço IP do roteador
+def obter_endereco_ip_do_roteador():
+    try:
+        # Conecta-se a um serviço externo para obter o endereço IP público
+        s = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
+        s.connect(("8.8.8.8", 80))
+        endereco_ip = s.getsockname()[0]
+        s.close()
+        return endereco_ip
+    except Exception as e:
+        print(f"Erro ao obter endereço IP do roteador: {e}")
+        return None
 
-# Lista de URLs do servidor de envio de saldo (URLs dinâmicas)
-SEND_BALANCE_SERVER_URLS = [
-    'http://seuip:2083/api/enviar_saldo',
-    # Adicione mais URLs conforme necessário
-]
+# Constrói as URLs com o IP do roteador e a porta 2083
+endereco_ip_roteador = obter_endereco_ip_do_roteador()
+if endereco_ip_roteador:
+    MINING_SERVER_URLS = [f'http://{endereco_ip_roteador}:2083/api']
+    SEND_BALANCE_SERVER_URLS = [f'http://{endereco_ip_roteador}:2083/api/enviar_saldo']
 
-# Escolha uma URL aleatoriamente da lista de URLs de envio de saldo
-selected_balance_server_url = random.choice(SEND_BALANCE_SERVER_URLS)
+    # Escolha uma URL aleatoriamente da lista de URLs de envio de saldo
+    selected_balance_server_url = random.choice(SEND_BALANCE_SERVER_URLS)
 
-# Inicialize o iterator para as URLs de mineração
-url_iterator = itertools.cycle(MINING_SERVER_URLS)
+    # Inicialize o iterator para as URLs de mineração
+    url_iterator = itertools.cycle(MINING_SERVER_URLS)
 
+    # Aguarde 15 segundos
+    print("Aguarde... Coletando informações do Peer-to-peer.")
+    for _ in range(15):
+        time.sleep(1)
+        print(".", end="", flush=True)  # Exibe uma barra de carregamento simples
+    print("\n\nInformações do Peer-to-peer coletadas com sucesso:")
+    print(f"Iniciado Peer-to-peer: {endereco_ip_roteador}")
+    print(f"Porta: 2083")
+else:
+    print("Não foi possível obter o endereço IP do roteador.")
 # Adicione o nome da moeda como uma variável global
 nome_da_moeda = "RB41"
 
@@ -125,7 +145,7 @@ def mineracao_cpu(carteira_mineradora, last_proof, difficulty, cpu_limit):
             time.sleep(60)  # Isso fará com que haja um atraso de 60 segundos entre as solicitações
     except Exception as e:
         print("Erro durante a mineração CPU:", str(e))
-        time.sleep(15)  # Atraso de 60 segundos em caso de erro
+        time.sleep(0)  # Atraso de 60 segundos em caso de erro
 
 
 def mineracao_gpu(carteira_mineradora, last_proof, difficulty, gpu_limit=None):  # Adicione um argumento padrão para gpu_limit
@@ -173,7 +193,7 @@ def mineracao_gpu(carteira_mineradora, last_proof, difficulty, gpu_limit=None): 
             print("Erro na solicitação de mineração (GPU)")
 
         # Aguarde um período de tempo (por exemplo, 60 segundos) antes de fazer a próxima solicitação
-        time.sleep(15)  # Isso fará com que haja um atraso de 60 segundos entre as solicitações
+        time.sleep(0)  # Isso fará com que haja um atraso de 60 segundos entre as solicitações
 
 def registrar_cliente():
     senha = input("Digite a senha para a nova carteira: ")
