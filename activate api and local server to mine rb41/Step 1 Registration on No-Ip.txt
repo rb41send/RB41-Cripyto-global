@@ -1,0 +1,22 @@
+Step 1: Registration on No-IP
+Go to the No-IP website at https://www.noip.com/.
+Create an account or log in if you already have one.
+After logging in, go to the "Dynamic DNS" section and click "Add a Host".
+Choose a hostname (what will be used to access your computer remotely) and select the desired domain (e.g. no-ip.org).
+Select your hostname renewal time (interval at which your IP will be automatically updated).
+Click "Add Host" to save the settings.
+Step 2: Download and Install No-IP Software
+Download the No-IP DUC (Dynamic Update Client) client from https://www.noip.com/download.
+Install the software by following the on-screen instructions.
+During installation, log in with your No-IP account.
+Choose the hosts you want to associate with your dynamic IP.
+Step 3: Router Configuration (Port Forwarding)
+To access your computer remotely, you need to configure port forwarding on your router. The exact details vary by router model, but generally involve:
+
+Access your router's settings through a browser by entering the router's IP address (see your router's manual for information on the default IP address).
+Locate the port forwarding or "Port Forwarding" section.
+Add a rule to forward connections on the desired port (for example, port 80 for HTTP access) to your computer's local IP address.
+Step 4: Verification
+Open the No-IP DUC software on your computer.
+DUC will automatically detect your public IP and update the host in No-IP with that IP.
+Access your computer remotely using the hostname you configured in No-IP.
