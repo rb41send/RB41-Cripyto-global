@@ -98,102 +98,6 @@ def verificar_uso_memoria_gpu():
     info = pynvml.nvmlDeviceGetMemoryInfo(handle)
     return (info.used / info.total) * 100
 
-# Função para realizar a mineração de CPU
-def mineracao_cpu(carteira_mineradora, last_proof, difficulty, cpu_limit):
-    try:
-        while True:
-            print(f"Minerando com carteira (CPU): {carteira_mineradora}, last_proof: {last_proof}, difficulty: {difficulty}")
-
-            # Defina o uso da CPU com base no limite definido pelo cliente
-            cpu_percent = cpu_limit
-
-            # Verifique o uso atual da CPU e ajuste para o limite da CPU
-            cpu_current_percent = psutil.cpu_percent(interval=None)
-            if cpu_current_percent > cpu_limit:
-                cpu_percent = cpu_limit
-
-            # Defina o uso da CPU
-            psutil.cpu_percent(interval=None)
-
-            # Fazer uma solicitação ao servidor para mineração
-            response = requests.post(next(url_iterator) + '/minerar', json={
-                'carteira': carteira_mineradora,
-                'last_proof': last_proof,
-                'difficulty': difficulty
-            })
-
-            if response.status_code == 200:
-                data = response.json()
-                recompensa = data.get("recompensa")
-                bloco_minerado = data.get("bloco_minerado")
-
-                if recompensa is not None:
-                    if bloco_minerado is not None:
-                        print(f"Mineração (CPU) concluída! Recompensa recebida em {nome_da_moeda}: {recompensa}")
-                        print(f"Bloco minerado: {bloco_minerado}")
-
-                        # Distribua a recompensa com base na potência de hash do minerador
-                        distribuir_recompensa(carteira_mineradora, recompensa)
-                    else:
-                        print(f"Mineração (CPU) concluída! Recompensa recebida em {nome_da_moeda}: {recompensa}, mas nenhum bloco foi minerado.")
-                else:
-                    print("Erro ao iniciar a mineração (CPU).")
-            else:
-                print("Erro na solicitação de mineração (CPU)")
-
-            # Aguarde um período de tempo (por exemplo, 60 segundos) antes de fazer a próxima solicitação
-            time.sleep(60)  # Isso fará com que haja um atraso de 60 segundos entre as solicitações
-    except Exception as e:
-        print("Erro durante a mineração CPU:", str(e))
-        time.sleep(0)  # Atraso de 60 segundos em caso de erro
-
-
-def mineracao_gpu(carteira_mineradora, last_proof, difficulty, gpu_limit=None):  # Adicione um argumento padrão para gpu_limit
-    while True:
-        print(f"Minerando com carteira (GPU): {carteira_mineradora}, last_proof: {last_proof}, difficulty: {difficulty}")
-
-        # Defina o uso da GPU com base no limite definido pelo cliente, ou 100% se gpu_limit for None
-        if gpu_limit is None:
-            gpu_percent = 100
-        else:
-            gpu_percent = gpu_limit
-
-        # Verifique o uso atual da GPU e ajuste para o limite da GPU
-        gpu_current_percent = GPUtil.getGPUs()[0].load * 100
-        if gpu_current_percent > gpu_percent:
-            gpu_percent = gpu_limit
-
-        # Defina o uso da GPU
-        GPUtil.showUtilization()
-
-        # Fazer uma solicitação ao servidor para mineração
-        response = requests.post(next(url_iterator) + '/minerar', json={
-            'carteira': carteira_mineradora,
-            'last_proof': last_proof,
-            'difficulty': difficulty
-        })
-
-        if response.status_code == 200:
-            data = response.json()
-            recompensa = data.get("recompensa")
-            bloco_minerado = data.get("bloco_minerado")
-
-            if recompensa is not None:
-                if bloco_minerado is not None:
-                    print(f"Mineração (GPU) concluída! Recompensa recebida em {nome_da_moeda}: {recompensa}")
-                    print(f"Bloco minerado: {bloco_minerado}")
-
-                    # Distribua a recompensa com base na potência de hash do minerador
-                    distribuir_recompensa(carteira_mineradora, recompensa)
-                else:
-                    print(f"Mineração (GPU) concluída! Recompensa recebida em {nome_da_moeda}: {recompensa}, mas nenhum bloco foi minerado.")
-            else:
-                print("Erro ao iniciar a mineração (GPU).")
-        else:
-            print("Erro na solicitação de mineração (GPU)")
-
-        # Aguarde um período de tempo (por exemplo, 60 segundos) antes de fazer a próxima solicitação
-        time.sleep(0)  # Isso fará com que haja um atraso de 60 segundos entre as solicitações
 
 def registrar_cliente():
     senha = input("Digite a senha para a nova carteira: ")
@@ -318,27 +222,7 @@ if __name__ == "__main__":
                 print(f"Saldo da carteira {carteira}: {saldo}")
             else:
                 print("Carteira não encontrada ou senha incorreta.")
-        elif opcao == "3":
-            if carteira_mineradora:
-                print(f"Mineração contínua já está ativa com a carteira {carteira_mineradora}...")
-            else:
-                carteira_mineradora = input("Digite o endereço da carteira para iniciar a mineração contínua: ")
-                last_proof = 0  # Inicialize com um valor adequado
-                difficulty = 4  # Defina a dificuldade desejada
-                cpu_limit = float(input("Digite o limite de uso da CPU (0-100%): "))
-                gpu_limit = float(input("Digite o limite de uso da GPU (0-100%): "))
-
-                # Crie threads separadas para a mineração de CPU e GPU
-                thread_cpu = threading.Thread(target=mineracao_cpu, args=(carteira_mineradora, last_proof, difficulty, cpu_limit))
-                thread_gpu = threading.Thread(target=mineracao_gpu, args=(carteira_mineradora, last_proof, difficulty, gpu_limit))
-
-                # Inicie as threads
-                thread_cpu.start()
-                thread_gpu.start()
-
-                # Aguarde até que ambas as threads terminem (isso não acontecerá neste exemplo, pois são loops infinitos)
-                # thread_cpu.join()
-                # thread_gpu.join()
+                
         elif opcao == "4":
             carteira_origem = input("Digite o endereço da carteira de origem: ")
             carteira_destino = input("Digite o endereço da carteira de destino: ")
