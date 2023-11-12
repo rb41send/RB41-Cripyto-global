@@ -1,0 +1,29 @@
+No Windows:
+1. Descubra seu endereço IP interno:
+Abra o prompt de comando (pressione Win + R, digite cmd e pressione Enter).
+Digite ipconfig e pressione Enter.
+Anote o endereço IPv4.
+2. Acesse o roteador:
+No navegador, digite o endereço do gateway padrão em sua barra de endereços. Geralmente, é algo como 192.168.1.1.
+Faça login no roteador. Se não souber as credenciais, consulte o manual do roteador.
+3. Abra a porta:
+Procure por uma seção chamada "Port Forwarding" ou "Virtual Server" no painel do roteador.
+Adicione uma nova regra: escolha um nome, o tipo de porta (TCP/UDP) e o endereço IP interno que anotou anteriormente.
+Defina a porta externa e interna para a mesma, Porta P2P, 2083.
+4. Configure o firewall do Windows:
+Vá para o Painel de Controle > Sistema e Segurança > Firewall do Windows.
+Clique em "Configurações avançadas" à esquerda.
+Crie uma nova regra de entrada para permitir a conexão pela porta especificada.
+5. Configurar o No-IP: 
+Baixe e instale o cliente No-IP no seu computador. https://www.noip.com/pt-BR/download?page=win
+Configure-o com sua conta No-IP e o host que você criou.https://www.noip.com/pt-BR/login
+No Ubuntu:
+1. Descubra seu endereço IP interno:
+Abra o terminal.
+Digite ifconfig e procure pelo endereço IPv4 da sua interface de rede.
+2. Abra a porta:
+Abra o terminal e instale o ufw (firewall padrão no Ubuntu) se ainda não estiver instalado: sudo apt-get install ufw.
+Habilite a porta desejada: sudo ufw allow 2083/tcp.
+3. Configurar o No-IP:
+Baixe e instale o cliente No-IP no seu Ubuntu.
+Configure-o com sua conta No-IP e o host que você criou.
