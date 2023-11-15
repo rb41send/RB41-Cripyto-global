@@ -1,7 +1,6 @@
 import socket
 import threading
 from concurrent.futures import ThreadPoolExecutor
-from cryptography.fernet import Fernet
 from flask import Flask
 
 # Chave de criptografia (gerada uma vez e compartilhada entre pares)
@@ -58,5 +57,26 @@ def start_flask_server():
         app.run(host='0.0.0.0', port=2096, threaded=True)
     except Exception as e:
         print(f"Erro ao iniciar o servidor Flask: {e}")
-        print(f"O endereço IP associado a '{dominio}' é: {target_ip}")
+
+if __name__ == "__main__":
+    shutdown_event = threading.Event()
+    
+    # Substitua com o endereço IP real
+    target_ip = '0.0.0.0'
+    target_port = 2096
+
+    flask_thread = threading.Thread(target=start_flask_server)
+    p2p_thread = threading.Thread(target=start_p2p_server, args=(shutdown_event, target_ip, target_port))
+
+    flask_thread.start()
+    p2p_thread.start()
+
+    try:
+        while True:
+            pass
+    except KeyboardInterrupt:
+        print("Encerrando o servidor...")
+        shutdown_event.set()
+        flask_thread.join()
+        p2p_thread.join()
 
