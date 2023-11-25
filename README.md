@@ -1,4 +1,16 @@
 # RB41 Global: The Revolution in Cryptocurrencies
+![Texto alternativo 1](https://raw.githubusercontent.com/rb41send/RB41-Cripyto-global/main/Image%202023-10-23%20at%2011.40.28.jpeg)
+![Texto alternativo 2](https://github.com/rb41send/RB41-Cripyto-global/blob/main/Image%202023-10-23%20at%2011.38.05.jpeg)
+![Texto alternativo 3](https://github.com/rb41send/RB41-Cripyto-global/blob/main/Image%202023-10-23%20at%2011.38.47.jpeg)
+![Texto alternativo 4](https://github.com/rb41send/RB41-Cripyto-global/blob/main/Image%202023-10-23%20at%2011.39.21.jpeg)
+![Texto alternativo 5](https://github.com/rb41send/RB41-Cripyto-global/blob/main/Image%202023-10-23%20at%2011.40.02.jpeg)
+![Texto alternativo 6](https://github.com/rb41send/RB41-Cripyto-global/blob/main/Image%202023-10-23%20at%2011.40.23.jpeg)
+![Texto alternativo 7](https://github.com/rb41send/RB41-Cripyto-global/blob/main/Image%202023-10-23%20at%2011.40.34.jpeg)
+![Texto alternativo 8](https://github.com/rb41send/RB41-Cripyto-global/blob/main/Image%202023-10-23%20at%2011.41.24.jpeg)
+![Texto alternativo 9](https://github.com/rb41send/RB41-Cripyto-global/blob/main/Image%202023-10-23%20at%2011.59.00.jpeg)
+![Texto alternativo 10](https://github.com/rb41send/RB41-Cripyto-global/blob/main/Image%202023-10-23%20at%2011.59.19.jpeg)
+![Texto alternativo 11](https://github.com/rb41send/RB41-Cripyto-global/blob/main/Image%202023-10-31%20at%2014.16.29.jpeg)
+![Texto alternativo 12](https://github.com/rb41send/RB41-Cripyto-global/blob/main/windows/Image%202023-10-31%20at%2019.13.14.jpeg)
 
 ## Welcome to RB41 Global
 
