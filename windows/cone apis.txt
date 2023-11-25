@@ -1,7 +1,7 @@
-http://127.0.0.1:2083/api/verificar_saldo?carteira=sua cartera
-http://127.0.0.1:2083/api/ultimos_blocos_rb41
-http://127.0.0.1:2083/
-
+http://seu rot:2083/api/verificar_saldo?carteira=sua cartera
+http://seu rot:2083/api/ultimos_blocos_rb41
+http://seu rot:2083/
+http://seu rot:2083/RB41
 
 import random
 import time
