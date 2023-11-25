@@ -1,5 +1,5 @@
 # RB41 Global: The Revolution in Cryptocurrencies
-![Texto alternativo 12](https://github.com/rb41send/RB41-Cripyto-global/blob/main/windows/Image%202023-11-21%20at%2022.49.42%20-%20Copia.jpeg)
+![Texto alternativo 12](https://github.com/rb41send/RB41-Cripyto-global/blob/main/windows/Image%202023-11-21%20at%2022.49.42%20-.jpeg)
 ![Texto alternativo 12](https://github.com/rb41send/RB41-Cripyto-global/blob/main/windows/Image%202023-11-21%20at%2022.49.42.jpeg)
 ![Texto alternativo 1](https://raw.githubusercontent.com/rb41send/RB41-Cripyto-global/main/Image%202023-10-23%20at%2011.40.28.jpeg)
 ![Texto alternativo 2](https://github.com/rb41send/RB41-Cripyto-global/blob/main/Image%202023-10-23%20at%2011.38.05.jpeg)
