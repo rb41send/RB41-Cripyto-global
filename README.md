@@ -11,7 +11,7 @@ At RB41 Global, we are pioneering a new era in digital finance. We invite you to
 
 ## Why Choose RB41?
 
-- **Total Decentralization**: Just like the pioneering Bitcoin, RB41 is truly decentralized. It lacks a central owner, resists central authority, and thrives without government interference. It is the epitome of financial independence and freedom.
+- **Total Decentralization**: Just like the pioneering RB41, RB41 is truly decentralized. It lacks a central owner, resists central authority, and thrives without government interference. It is the epitome of financial independence and freedom.
 
 - **Privacy in Focus**: Your privacy matters to us. At RB41, we take data security seriously. Our transactions are conducted with the highest levels of security and confidentiality, ensuring that your personal information remains impervious to prying eyes.
 

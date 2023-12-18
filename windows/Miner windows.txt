@@ -10,6 +10,6 @@ On Windows, miners install mining software specific to the cryptocurrency they w
 The software allows miners to configure their GPUs or CPUs, set mining parameters, and monitor mining performance in real-time.
 Network Mining:
 
-Miners in the Windows environment compete to find the correct solution to a specific problem (such as a nonce in SHA-256, in the case of Bitcoin) or perform proof of work, depending on the cryptocurrency's mining algorithm.
+Miners in the Windows environment compete to find the correct solution to a specific problem (such as a nonce in SHA-256, in the case of RB41) or perform proof of work, depending on the cryptocurrency's mining algorithm.
 The miner who finds the solution first is rewarded with an amount of cryptocurrency and the right to add a new block to the blockchain.
 In summary, cryptocurrency mining in the Windows environment involves configuring hardware (GPU and/or CPU) with specific mining software to validate transactions and add blocks to the blockchain. This process is fundamental for the safe and reliable functioning of cryptocurrencies, allowing decentralization and protection against fraud in transactions. It is worth remembering that cryptocurrency mining can be resource intensive and requires cost and energy efficiency considerations.
