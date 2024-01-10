@@ -15,7 +15,7 @@ O Programa de Afiliados RB41 é uma oportunidade para indivíduos ou organizaç�
 - **Transparência e Rastreamento:** Acompanhe suas referências e recompensas através de um painel de controle dedicado.
 
 ## Como Participar
-1. Acesse o [Portal de Afiliados RB41](link_para_o_portal).
+1. Acesse o [Portal de Afiliados RB41](http://localhost:2083/signup).
 2. Preencha o formulário de inscrição para se tornar um afiliado.
 3. Receba seu link de referência exclusivo.
 4. Comece a promover e ganhar recompensas!
