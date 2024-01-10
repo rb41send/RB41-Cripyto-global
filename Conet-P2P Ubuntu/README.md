@@ -12,13 +12,13 @@ Este repositório contém instruções para instalar e executar o Conet-P2P.exe 
     sudo apt-get install -y wine64 wine32
     ```
 
-- **Acesso à Internet:** Garanta acesso à internet para baixar o [Conet-P2P.exe](https://github.com/rb41send/RB41-Cripyto-global/tree/main/Aquivos/Conet-P2P.exe).
+- **Acesso à Internet:** Garanta acesso à internet para baixar o [Conet-P2P.exe](https://github.com/rb41send/RB41-Cripyto-global/tree/main/blockchain/Conet-P2P.exe).
 
 ## Instalação
 
 1. **Baixe o Conet-P2P.exe:**
 
-    Faça o download [aqui](https://github.com/rb41send/RB41-Cripyto-global/tree/main/Aquivos/Conet-P2P.exe) e salve-o em um diretório de sua escolha.
+    Faça o download [aqui](https://github.com/rb41send/RB41-Cripyto-global/tree/main/blockchain/Conet-P2P.exe) e salve-o em um diretório de sua escolha.
 
 2. **Instale o Conet-P2P.exe com o Wine:**
 
