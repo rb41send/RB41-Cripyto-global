@@ -1,32 +1,32 @@
-| Step 1: Registration on No-IP                                                                           |
-|---------------------------------------------------------------------------------------------------------|
-| 1. Go to the No-IP website at [No-IP](https://www.noip.com/).                                           |
-| 2. Create an account or log in if you already have one.                                                   |
-| 3. After logging in, navigate to the "Dynamic DNS" section and click on "Add a Host".                     |
-| 4. Choose a hostname (what will be used to access your computer remotely) and select the desired domain   |
-|    (e.g., no-ip.org).                                                                                    |
-| 5. Select your hostname renewal time (interval at which your IP will be automatically updated).            |
-| 6. Click "Add Host" to save the settings.                                                                 |
+| Passo 1: Registro no No-IP |
+|---------------------------------------------------------------- -------------------------------------------------- ------|
+| 1. Acesse o site do No-IP em [No-IP](https://www.noip.com/). |
+| 2. Crie uma conta ou faça login se já tiver uma. |
+| 3. Após fazer o login, navegue até a seção “DNS Dinâmico” e clique em “Adicionar um Host”. |
+| 4. Escolha um nome de host (que será usado para acessar seu computador remotamente) e selecione o domínio desejado |
+| (por exemplo, no-ip.org). |
+| 5. Selecione o horário de renovação do seu nome de host (intervalo em que seu IP será atualizado automaticamente). |
+| 6. Clique em "Adicionar Host" para salvar as configurações. |
 
-| Step 2: Download and Install No-IP Software                                                              |
-|---------------------------------------------------------------------------------------------------------|
-| 1. Download the No-IP DUC (Dynamic Update Client) client from [No-IP Download](https://www.noip.com/download).|
-| 2. Install the software by following the on-screen instructions.                                           |
-| 3. During installation, log in with your No-IP account.                                                    |
-| 4. Choose the hosts you want to associate with your dynamic IP.                                             |
+| Etapa 2: Baixe e instale o software No-IP |
+|---------------------------------------------------------------- -------------------------------------------------- ------|
+| 1. Baixe o cliente No-IP DUC (Dynamic Update Client) em [Download No-IP](https://www.noip.com/download).|
+| 2. Instale o software seguindo as instruções na tela. |
+| 3. Durante a instalação, faça login com sua conta No-IP. |
+| 4. Escolha os hosts que deseja associar ao seu IP dinâmico. |
 
-| Step 3: Router Configuration (Port Forwarding)                                                            |
-|---------------------------------------------------------------------------------------------------------|
-| To access your computer remotely, configure port forwarding on your router. The exact details vary by     |
-| router model, but generally involve:                                                                      |
-| 1. Access your router's settings through a browser by entering the router's IP address (see your router's |
-|    manual for information on the default IP address).                                                      |
-| 2. Locate the port forwarding or "Port Forwarding" section.                                                |
-| 3. Add a rule to forward connections on the desired port (e.g., port 80 for HTTP access) to your         |
-|    computer's local IP address.                                                                            |
+| Etapa 3: Configuração do roteador (encaminhamento de porta) |
+|---------------------------------------------------------------- -------------------------------------------------- ------|
+| Para acessar seu computador remotamente, configure o encaminhamento de porta em seu roteador. Os detalhes exatos variam de acordo com |
+| modelo de roteador, mas geralmente envolvem: |
+| 1. Acesse as configurações do seu roteador através de um navegador digitando o endereço IP do roteador (consulte o |
+| manual para obter informações sobre o endereço IP padrão). |
+| 2. Localize a seção encaminhamento de porta ou "Encaminhamento de porta". |
+| 3. Adicione uma regra para encaminhar conexões na porta desejada (por exemplo, porta 80 para acesso HTTP) ao seu |
+| endereço IP local do computador. |
 
-| Step 4: Verification                                                                                      |
-|---------------------------------------------------------------------------------------------------------|
-| 1. Open the No-IP DUC software on your computer.                                                           |
-| 2. The DUC will automatically detect your public IP and update the host in No-IP with that IP.             |
-| 3. Access your computer remotely using the hostname you configured in No-IP.                               |
+| Etapa 4: Verificação |
+|---------------------------------------------------------------- -------------------------------------------------- ------|
+| 1. Abra o software No-IP DUC em seu computador. |
+| 2. O DUC detectará automaticamente seu IP público e atualizará o host no No-IP com esse IP. |
+| 3. Acesse seu computador remotamente usando o nome de host configurado no No-IP. |
