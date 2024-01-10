@@ -26,4 +26,4 @@ O Conet-P2P.exe utiliza a tecnologia P2P para criar um ambiente seguro para suas
 
 O Conet-P2P.exe aliado à tecnologia blockchain é a combinação perfeita para assegurar a segurança das suas carteiras de criptomoeda. Aproveite as vantagens de uma gestão segura e transparente de ativos digitais.
 
-Para mais informações sobre o Conet-P2P.exe, acesse [http://localhost:2083](#) ou entre em contato conosco.
+Para mais informações sobre o Conet-P2P.exe, acesse [http://localhost:2083/](#) ou entre em contato conosco.
