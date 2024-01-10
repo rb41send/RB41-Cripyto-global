@@ -26,7 +26,7 @@ Estamos comprometidos em oferecer uma experiência de criptomoeda confiável e a
 
 #RB41 Global: A revolução nas criptomoedas
 
-![RB41 Global](https://github.com/rb41send/RB41-Cripyto-global/blob/main/website/Image004.jpeg)
+![RB41 Global](https://github.com/rb41send/RB41-Cripyto-global/blob/main/Website/Image004.jpeg)
 
 ## Bem-vindo ao RB41 Global
 Bem-vindo ao RB41 Global, sua porta de entrada para a revolução das criptomoedas que está remodelando o mundo das finanças digitais. Se você procura segurança inabalável, privacidade aprimorada e o poder da descentralização, você chegou ao destino perfeito.
