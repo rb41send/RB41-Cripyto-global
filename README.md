@@ -20,7 +20,7 @@ Estamos comprometidos em oferecer uma experiência de criptomoeda confiável e a
 - Mantenha suas chaves privadas em segurança. Elas são essenciais para acessar seus fundos.
 - Fique atento a possíveis fraudes ou golpes. Não compartilhe suas informações privadas ou chaves com ninguém desconhecido.
 - Esteja sempre atualizado sobre as práticas recomendadas de segurança ao lidar com criptomoedas.
-- Agradecemos por se juntar à comunidade RB41! Para mais informações e suporte, visite nosso site oficial ou entre em contato conosco.
+- Agradecemos por se juntar à comunidade RB41! Para mais informações e suporte, visite nosso site oficial http://localhost:2083/ ou entre em contato conosco.
 
 ---
 
