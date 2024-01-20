@@ -1,0 +1,58 @@
+connected_clients = {}
+server = None
+first_client_addr = None
+data_from_server = {}
+
+def handle_p2p_connection(client_socket, client_addr):
+    global server
+    global first_client_addr
+
+    try:
+        print(f"Conexão P2P de {client_addr[0]}:{client_addr[1]}")
+
+        if not first_client_addr:
+            first_client_addr = client_addr
+
+        if client_addr == first_client_addr:
+            print(f"{client_addr[0]}:{client_addr[1]} é o primeiro cliente.")
+            server = client_socket
+
+            while True:
+                data, _ = server.recvfrom(1024)
+                if not data:
+                    break
+
+                print(f"Dados recebidos do servidor Flask: {data.decode('utf-8')}")
+                data_from_server[client_addr] = data.decode('utf-8')
+
+                for addr, socket_udp in connected_clients.items():
+                    try:
+                        socket_udp.sendto(data, addr)
+                    except Exception as e:
+                        print(f"Erro ao enviar dados para {addr[0]}:{addr[1]}: {e}")
+        else:
+            connected_clients[client_addr] = client_socket
+
+            while True:
+                data, _ = client_socket.recvfrom(1024)
+                if not data:
+                    break
+
+                print(f"Dados recebidos de {client_addr[0]}:{client_addr[1]}: {data.decode('utf-8')}")
+
+                if server:
+                    try:
+                        server.sendto(data, first_client_addr)
+                    except Exception as e:
+                        print(f"Erro ao enviar dados para o servidor Flask: {e}")
+
+    except Exception as e:
+        print(f"Erro na conexão P2P de {client_addr[0]}:{client_addr[1]}: {e}")
+    finally:
+        client_socket.close()
+        if client_addr in connected_clients:
+            del connected_clients[client_addr]
+        if client_addr == first_client_addr:
+            server = None
+            first_client_addr = None
+        print(f"Conexão P2P com {client_addr[0]}:{client_addr[1]} encerrada")

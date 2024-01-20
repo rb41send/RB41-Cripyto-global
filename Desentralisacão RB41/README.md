@@ -1,57 +1,68 @@
-RB41 - README
-Overview
-RB41 is a decentralized cryptocurrency project emphasizing peer-to-peer (P2P) communication for mining and inter-node interaction. This README provides an overview of the P2P networking implementation within the RB41 project.
+# RB41 - LEIA-ME
 
-P2P Connection Handling
-Node Initialization
-RB41 network utilizes a P2P connection model where each node acts as both a client and a server. Key components of the P2P setup include:
+## Visão geral
 
-connected_clients: A dictionary to track connected clients in the network.
-server: Represents the server node managing P2P connections.
-first_client_addr: Stores the address information of the first connecting client.
-data_from_server: Container for data received from the Flask server.
-P2P Connection Function
-The handle_p2p_connection function is crucial for managing P2P connections. It handles incoming client connections and manages communication between clients and the server. The function follows these steps:
+RB41 é um projeto de criptomoeda descentralizado que enfatiza a comunicação ponto a ponto (P2P) para mineração e interação entre nós. Este README fornece uma visão geral da implementação da rede P2P no projeto RB41.
 
-Initialization:
+## Manipulação de conexão P2P
 
-When a new P2P connection is established, the function prints information about the connection.
-Server Setup:
+### Inicialização do nó
 
-If it's the first client to connect, the server is initialized, and the connection with the Flask server is established.
-Data Exchange:
+A rede RB41 utiliza um modelo de conexão P2P onde cada nó atua como cliente e servidor. Os principais componentes da configuração P2P incluem:
 
-Data received from the Flask server is relayed to connected clients.
-Data received from clients is relayed to the Flask server.
-Error Handling:
+- `connected_clients`: Um dicionário para rastrear clientes conectados na rede.
+- `server`: Representa o nó do servidor que gerencia conexões P2P.
+- `first_client_addr`: Armazena as informações de endereço do primeiro cliente conectado.
+- `data_from_server`: Container para dados recebidos do servidor Flask.
 
-The function includes error handling to manage unexpected issues during P2P communication.
-Connection Closure:
+### Função de conexão P2P
 
-Upon completion of the communication or if an error occurs, the connection is closed, and relevant entries are removed.
-Usage
-Node Initialization:
+A função `handle_p2p_connection` é crucial para gerenciar conexões P2P. Ele lida com conexões de clientes de entrada e gerencia a comunicação entre clientes e o servidor. A função segue estas etapas:
 
-Before running the P2P connection, ensure that the necessary variables (connected_clients, server, first_client_addr, data_from_server) are properly set.
-P2P Connection Handling:
+1. **Inicialização:**
+    - Quando uma nova conexão P2P é estabelecida, a função imprime informações sobre a conexão.
 
-Call the handle_p2p_connection function, passing the client socket and client address as parameters.
-Server-Client Interaction:
+2. **Configuração do servidor:**
+    - Se for o primeiro cliente a se conectar, o servidor é inicializado e a conexão com o servidor Flask é estabelecida.
 
-Clients communicate with each other and the Flask server through the P2P connection.
-Error Management:
+3. **Troca de dados:**
+    - Os dados recebidos do servidor Flask são retransmitidos para clientes conectados.
+    - Os dados recebidos dos clientes são retransmitidos para o servidor Flask.
 
-The function includes mechanisms to handle errors gracefully.
-Connection Closure:
+4. **Tratamento de erros:**
+    - A função inclui tratamento de erros para gerenciar problemas inesperados durante a comunicação P2P.
 
-Connections are closed appropriately after communication is complete or when errors occur.
-Notes
-The RB41 P2P network is designed to facilitate decentralized communication among nodes.
-Ensure that the necessary network configurations are in place for successful P2P communication.
-Feel free to explore the RB41 project further to gain a deeper understanding of its decentralized architecture and peer-to-peer networking capabilities.
+5. **Encerramento de conexão:**
+    - Após a conclusão da comunicação ou se ocorrer um erro, a conexão é encerrada e as entradas relevantes são removidas.
 
-Contribution
-If you encounter issues or have suggestions, please open an issue. Contributions are welcome!
+## Uso
 
-License
-This project is licensed under the MIT License.
+1. **Inicialização do nó:**
+    - Antes de executar a conexão P2P, certifique-se de que as variáveis necessárias (`connected_clients`, `server`, `first_client_addr`, `data_from_server`) estejam configuradas corretamente.
+
+2. **Manuseio de conexão P2P:**
+    - Chame a função `handle_p2p_connection`, passando o soquete do cliente e o endereço do cliente como parâmetros.
+
+3. **Interação Servidor-Cliente:**
+    - Os clientes se comunicam entre si e com o servidor Flask através da conexão P2P.
+
+4. **Gerenciamento de erros:**
+    - A função inclui mecanismos para lidar com erros normalmente.
+
+5. **Encerramento de conexão:**
+    - As conexões são fechadas adequadamente após a conclusão da comunicação ou quando ocorrem erros.
+
+## Notas
+
+- A rede P2P RB41 foi projetada para facilitar a comunicação descentralizada entre os nós.
+- Certifique-se de que as configurações de rede necessárias estejam em vigor para uma comunicação P2P bem-sucedida.
+
+Sinta-se à vontade para explorar mais o projeto RB41 para obter uma compreensão mais profunda de sua arquitetura descentralizada e recursos de rede ponto a ponto.
+
+## Contribuição
+
+Se você encontrar problemas ou tiver sugestões, abra um problema. Contribuições são bem-vindas!
+
+## Licença
+
+Este projeto está licenciado sob a [Licença MIT](LICENSE).
